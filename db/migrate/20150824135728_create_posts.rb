@@ -3,9 +3,11 @@ class CreatePosts < ActiveRecord::Migration
     create_table :posts do |t|
       t.string :name
       t.string :email
-      t.string :title
-      t.text :content
+      t.string :sub
+      t.text :com
       t.string :deletePassword
+      t.integer :push
+      t.integer :board_id
 
       t.timestamps null: false
     end
