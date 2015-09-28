@@ -15,8 +15,8 @@ class PostsController < ApplicationController
 
   def post_params
     if params[:post][:name].empty?
-    params[:post][:name] = "無名氏"
-    params.require(:post).permit(:name, :email, :sub, :com)
+      params[:post][:name] = "無名氏"
     end
+    params.require(:post).permit(:name, :email, :sub, :com)
   end
 end
