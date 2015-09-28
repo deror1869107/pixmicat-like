@@ -1,2 +1,17 @@
 <h1><%= @board.name %></h1>
 <%= render 'form' %>
+
+<% @posts.each do |p| %>
+  <!--<%= p.name %><br>
+  <%= p.email %><br>
+  <%= p.sub %><br>
+  <%= p.com %><br>-->
+  <div class="threadpost" id="">
+    <span class="title"><%= p.sub %></span>
+    名稱:<span class="name"><%= p.name %></span> [<%=Time.at(p.created_at) %>] No.<%= p.id %>
+    <div class="quote"><%= p.com %></div>
+  </div>
+  <br>
+  <br>
+  <br>
+<% end %>

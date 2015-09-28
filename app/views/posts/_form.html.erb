@@ -5,10 +5,10 @@
   <tbody>
     <tr><td class="Form_bg"><b>名 稱</b></td><td><%= f.text_field :name %></td></tr>
     <tr><td class="Form_bg"><b>E-mail</b></td><td><%= f.text_field :email %></td></tr>
-    <tr><td class="Form_bg"><b>標 題</b></td><td><%= f.text_field :sub %><%= f.submit %></td></tr>
-    <tr><td class="Form_bg"><b>內 文</b></td><td><%= f.text_field :com ,:cols => "48", :rows => "4", :style => "width: 400px; height: 80px;" %></textarea></td></tr>
+    <tr><td class="Form_bg"><b>標 題</b></td><td><%= f.text_field :sub %><%= f.submit("送出") %></td></tr>
+    <tr><td class="Form_bg"><b>內 文</b></td><td><%= f.text_area :com ,:cols => "48", :rows => "4", :style => "width: 400px; height: 80px;" %></td></tr>
     <!--<tr><td class="Form_bg"><b>附加檔案</b></td><td><input name="upfile" size="25" type="file"> [<input name="up_series" id="up_series" value="on" type="checkbox"><label for="up_series">連貼機能</label>]</td></tr>-->
-    <tr><td class="Form_bg"><b>刪除用密碼</b></td><td><input name="pwd" size="8" maxlength="8" value="" type="password"><small>(刪除文章用。英數字8字元以內)</small></td></tr>
+    <tr><td class="Form_bg"><b>刪除用密碼</b></td><td><!--<input name="pwd" size="8" maxlength="8" value="" type="password">--><small>(刪除文章用。英數字8字元以內)</small></td></tr>
     <tr><td colspan="2">
       <div style="font-size: 10pt;">
         <ul>

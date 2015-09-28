@@ -1,8 +1,22 @@
 class PostsController < ApplicationController
   def index
     @board = Board.first
-    @newpost = Post.new
-    @posts = Post.all
     @post = Post.new
+    @posts = Post.all
+  end
+
+  def create
+    @post = Post.create(post_params)
+    @post.save
+    redirect_to root_path
+  end
+
+  private
+
+  def post_params
+    if params[:post][:name].empty?
+    params[:post][:name] = "無名氏"
+    params.require(:post).permit(:name, :email, :sub, :com)
+    end
   end
 end
