@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150923142231) do
+ActiveRecord::Schema.define(version: 20150930104428) do
 
   create_table "boards", force: :cascade do |t|
     t.string   "name"
@@ -27,8 +27,12 @@ ActiveRecord::Schema.define(version: 20150923142231) do
     t.string   "deletePassword"
     t.integer  "push"
     t.integer  "board_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "upfile_file_name"
+    t.string   "upfile_content_type"
+    t.integer  "upfile_file_size"
+    t.datetime "upfile_updated_at"
   end
 
 end

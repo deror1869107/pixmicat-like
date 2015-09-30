@@ -17,6 +17,6 @@ class PostsController < ApplicationController
     if params[:post][:name].empty?
       params[:post][:name] = "無名氏"
     end
-    params.require(:post).permit(:name, :email, :sub, :com)
+    params.require(:post).permit(:name, :email, :sub, :com, :upfile)
   end
 end
