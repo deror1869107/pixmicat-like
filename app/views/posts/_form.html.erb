@@ -9,14 +9,14 @@
     <tr><td class="Form_bg"><b>內 文</b></td><td><%= f.text_area :com ,:cols => "48", :rows => "4", :style => "width: 400px; height: 80px;" %></td></tr>
     <!--<tr><td class="Form_bg"><b>附加檔案</b></td><td><input name="upfile" size="25" type="file"> [<input name="up_series" id="up_series" value="on" type="checkbox"><label for="up_series">連貼機能</label>]</td></tr>-->
     <tr><td class="Form_bg"><b>附加檔案</b></td><td><%= f.file_field :upfile %></td></tr>
-    <tr><td class="Form_bg"><b>刪除用密碼</b></td><td><!--<input name="pwd" size="8" maxlength="8" value="" type="password">--><small>(刪除文章用。英數字8字元以內)</small></td></tr>
+    <tr><td class="Form_bg"><b>刪除用密碼</b></td><td><%= f.text_field :deletePassword, :maxlength => 8, :type => "password" %><!--<input name="pwd" size="8" maxlength="8" value="" type="password">--><small>(刪除文章用。英數字8字元以內)</small></td></tr>
     <tr><td colspan="2">
       <div style="font-size: 10pt;">
         <ul>
          <li>可附加檔案類型：GIF, JPG, PNG，瀏覽器才能正常附加檔案</li>
          <li>附加檔案最大上傳資料量為 512 KB。當回文時E-mail填入sage為不推文功能</li>
           <li>當檔案超過寬 250 像素、高 250 像素時會自動縮小尺寸顯示</li>
-          <li>目前附加檔案使用量大小： 16450 KB / 20480 KB</li>
+          <li>目前附加檔案使用量大小： 16450 KB / 20480 KB(尚未實作)</li>
         </ul>
      </div>
     </td></tr>

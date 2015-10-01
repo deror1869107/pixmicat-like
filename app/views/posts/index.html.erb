@@ -6,7 +6,6 @@
   <%= p.email %><br>
   <%= p.sub %><br>
   <%= p.com %><br>-->
-  <hr>
   <div class="threadpost" id="">
     <% if not p.upfile_file_name.nil? %>
       檔名：<%= link_to p.upfile_file_name, p.upfile.url %>-(<%= p.upfile_file_size / 1000 %> KB,<br>
@@ -19,4 +18,5 @@
   <br>
   <br>
   <br>
+  <hr>
 <% end %>
