@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150930104428) do
+ActiveRecord::Schema.define(version: 20151002060802) do
 
   create_table "boards", force: :cascade do |t|
     t.string   "name"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20150930104428) do
     t.string   "upfile_content_type"
     t.integer  "upfile_file_size"
     t.datetime "upfile_updated_at"
+    t.string   "userid"
   end
 
 end

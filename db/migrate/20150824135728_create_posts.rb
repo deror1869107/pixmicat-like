@@ -8,7 +8,6 @@ class CreatePosts < ActiveRecord::Migration
       t.string :deletePassword
       t.integer :push
       t.integer :board_id
-      t.string :ID
 
       t.timestamps null: false
     end
