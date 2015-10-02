@@ -1,3 +1,5 @@
+require 'base64'
+
 class PostsController < ApplicationController
   def index
     @board = Board.first
@@ -17,6 +19,18 @@ class PostsController < ApplicationController
     if params[:post][:name].empty?
       params[:post][:name] = "無名氏"
     end
-    params.require(:post).permit(:name, :email, :sub, :com)
+    params[:post][:userid] = makeHash
+    params.require(:post).permit(:name, :email, :sub, :com, :upfile, :userid)
+  end
+
+  def makeHash
+    @ip = 0
+    request.remote_ip.split('.').each do |p|
+      @ip *= 256
+      @ip += p.to_i
+    end
+    t = Time.now
+    @time = t.year.to_s + t.month.to_s + t.day.to_s
+    @hash = Base64.encode64(@ip.to_s + @time).slice(0, 8)
   end
 end

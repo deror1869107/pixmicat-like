@@ -7,11 +7,16 @@
   <%= p.sub %><br>
   <%= p.com %><br>-->
   <div class="threadpost" id="">
+    <% if not p.upfile_file_name.nil? %>
+      檔名：<%= link_to p.upfile_file_name, p.upfile.url %>-(<%= p.upfile_file_size / 1000 %> KB,<br>
+      <%= link_to image_tag(p.upfile.url(:medium), :class => "img"), p.upfile.url %>
+    <% end %>
     <span class="title"><%= p.sub %></span>
-    名稱:<span class="name"><%= p.name %></span> [<%=Time.at(p.created_at) %>] No.<%= p.id %>
+    名稱:<span class="name"><%= p.name %></span> [<%=Time.at(p.created_at).asctime %> ID:<%= p.userid %>] No.<%= p.id %>
     <div class="quote"><%= p.com %></div>
   </div>
   <br>
   <br>
   <br>
+  <hr>
 <% end %>
