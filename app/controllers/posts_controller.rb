@@ -1,3 +1,4 @@
+require 'digest'
 require 'base64'
 
 class PostsController < ApplicationController
@@ -31,6 +32,7 @@ class PostsController < ApplicationController
     end
     t = Time.now
     @time = t.year.to_s + t.month.to_s + t.day.to_s
-    @hash = Base64.encode64(@ip.to_s + @time).slice(0, 8)
+
+    @hash = Base64.encode64(Digest::MD5.new.update(@ip.to_s + @time).hexdigest).slice(0, 8)
   end
 end
