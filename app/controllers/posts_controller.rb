@@ -10,7 +10,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
-    @post.save
+    @post.save if not @post.sub.empty? or not @post.upfile_file_name.nil?
     redirect_to root_path
   end
 
@@ -25,14 +25,14 @@ class PostsController < ApplicationController
   end
 
   def makeHash
-    @ip = 0
+    ip = 0
     request.remote_ip.split('.').each do |p|
-      @ip *= 256
-      @ip += p.to_i
+      ip *= 256
+      ip += p.to_i
     end
     t = Time.now
-    @time = t.year.to_s + t.month.to_s + t.day.to_s
+    time = t.year.to_s + t.month.to_s + t.day.to_s
 
-    @hash = Base64.encode64(Digest::MD5.new.update(@ip.to_s + @time).hexdigest).slice(0, 8)
+    @hash = Base64.encode64(Digest::MD5.new.update(ip.to_s + time).hexdigest).slice(0, 8)
   end
 end
